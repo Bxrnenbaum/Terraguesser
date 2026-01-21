@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+
+:root {
+    /* COLOR PALETTE */
+    --blueish-black: #020205;
+
+    --bright-purple: #6d28d9;
+    --pastel-purple: #ad79ff;
+    --purple: rgb(108, 40, 217);
+
+    --transparent-bright-purple: rgba(108, 40, 217, 0.1);
+    
+    --transparent-purple: rgba(109, 40, 217, 0.1);
+    --transparent-pastel-purple: rgba(173, 121, 255, 0.1);
+
+    --white: #ffffff;
+    --light-gray: #5c5c7a;
+
+    --transparent-white: rgba(255, 255, 255, 0.03);
+    --transparent-medium-purple: rgba(109, 40, 217, 0.3);
+
+    /* FUNCTIONAL COLORS */
+
+    /* basic */
+    --text-default: var(--white);
+    --text-muted: var(--light-gray);
+
+    /* home */
+    --home-header-shadow: var(--bright-purple);
+
+    --home-card-border: var(--transparent-medium-purple);
+    --home-card-border-hover: var(--bright-purple);
+    --home-card-bg: var(--transparent-white);
+    --home-card-bg-hover: var(--transparent-bright-purple);
+    --home-card-shadow-hover: var(--transparent-bright-purple);
+    --home-how-to-play-border: var(--transparent-medium-purple);
+
+    /* legal */
+    --legal-border: var(--transparent-medium-purple);
+    --legal-shadow: var(--transparent-bright-purple);
+    --legal-subtitle: var(--pastel-purple);
+
+    /* background */
+    --bg-base: var(--blueish-black);
+
+    --bg-radial-accent-primary: var(--transparent-bright-purple);
+    --bg-radial-accent-secondary: var(--transparent-pastel-purple);
+    --bg-radial-accent-tertiary: var(--transparent-purple);
+
+    /* navbar */
+    --navbar-text: var(--white);
+    --navbar-text-hover: var(--pastel-purple);
+
+    --navbar-shadow: var(--bright-purple);
+
+    --navbar-border: var(--bright-purple);
+
+    /* buttons */
+    --button-bg: var(--bright-purple);
+    --button-bg-hover: var(--white);
+    --button-text: var(--white);
+    --button-hover-text: var(--bright-purple);
+    --button-shadow: var(--bright-purple);
+
+    /* input */
+    --input-bg: var(--transparent-white);
+    --input-bg-hover: var(--white);
+    --input-text: var(--white);
+    --input-hover-text: var(--bright-purple);
+    --input-shadow: var(--transparent-bright-purple);
+    --input-border: var(--transparent-medium-purple);
+
+    /* table */
+    --table-text: var(--white);
+    --table-shadow: var(--bright-purple);
+    --table-bg: var(--transparent-white);
+    --table-header-bg: var(--transparent-pastel-purple);
+    --table-border: var(--transparent-medium-purple);
+
+    /* game card */
+    --card-border-hover: var(--bright-purple);
+    --card-shadow-hover: var(--bright-purple);
+}
+
+body {
+    font-family: "Lexend Deca", sans-serif;
+    background-color: var(--blueish-black);
+
+    margin: 0;
+    min-height: 100vh;
+    background-color: #02010a;
+
+    background-image:
+        radial-gradient(circle at 20% 30%, var(--bg-radial-accent-primary), transparent 40%),
+        radial-gradient(circle at 80% 70%, var(--bg-radial-accent-secondary), transparent 50%),
+        radial-gradient(circle at 50% 50%, var(--bg-radial-accent-tertiary), transparent 40%),
+        radial-gradient(1px 1px at 25px 35px, white, transparent),
+        radial-gradient(1.5px 1.5px at 100px 150px, rgba(255, 255, 255, 0.8), transparent),
+        radial-gradient(1px 1px at 200px 50px, white, transparent),
+        radial-gradient(2px 2px at 50% 20%, white, transparent),
+        radial-gradient(2px 2px at 10% 80%, white, transparent);
+
+    background-size: 100% 100%, 100% 100%, 100% 100%, 250px 250px, 350px 350px, 400px 400px, 500px 500px, 600px 600px;
+
+    background-attachment: fixed;
+    color: var(--white);
+
+    animation: scroll-progress 1s ease-in-out;
+    animation-timeline: scroll();
+}
+
+@keyframes scroll-progress {
+    from {
+        background-position: 0% 0%;
+        
+    }
+
+    to {
+        background-position: 0% -150%;
+    }
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 100000;
+    backdrop-filter: blur(20px);
+    top: 0;
+}
+
+.navbar ul {
+    background-color: rgba(0, 0, 0, 0.484);
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+}
+
+.navbar li a {
+    color: var(--navbar-text);
+    text-decoration: none;
+    padding: 10px 25px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar li a:hover {
+    color: var(--navbar-text-hover);
+    text-shadow: 0 0 10px var(--navbar-shadow), 0 0 20px var(--navbar-shadow);
+    border-bottom: 2px solid var(--navbar-border);
+    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+@media (max-width: 768px) {
+
+    .navbar ul {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    navbar ul li a {
+        padding-left: 10px;
+        padding-right: 10px;
+
+    }
+
+    .navbar ul li a:hover {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.footer-content {
+    align-content: start;
+    text-align: center;
+    padding: 50px;
+    color: var(--light-gray);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    line-height: 1.6;
+}
+
+.footer-link {
+    text-align: center;
+    color: var(--light-gray);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-decoration: underline;
+    /* Added for better UX, optional */
+}
+
+
+@media (max-width: 450px) {
+
+    .navbar ul li {
+        font-size: .9rem;
+    }
+
+    .navbar ul li a {
+        padding-left: 5px;
+        padding-right: 5px;
+
+    }
+
+    .navbar ul li a:hover {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .navbar ul li {
+        font-size: x-small;
+    }
+
+    .navbar ul li a {
+        padding-left: 10px;
+        padding-right: 10px;
+
+    }
+
+    .navbar ul li a:hover {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>City guesser - Country</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/game.css" />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <ul class="navlist">
+          <li>
+            <a href="./index.html">Home</a>
+          </li>
+          <li>
+            <a href="./capital.html">Capital</a>
+          </li>
+          <li>
+            <a href="./country.html">Country</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <div class="inputs">
+        <input type="text" id="input_field" />
+        <button id="submit_button">Submit</button>
+      </div>
+
+      <div id="card-container">
+        <template id="card-template">
+          <div class="card winning-card">
+            <p class="name"></p>
+            <img class="flag" src="" alt="" />
+          </div>
+        </template>
+      </div>
+    </main>
+
+    <footer>
+      <p class="footer-content">
+        &copy; 2026 TerraGuesser // Tobias Primez
+        <br />
+        All rights reserved.
+        <br />
+        <a href="./impressum.html" class="footer-link">Impressum</a>
+      </p>
+    </footer>
+  </body>
+
+  <script type="module" src="../js/countries.js"></script>
+</html>

@@ -1,0 +1,196 @@
+/* INPUTS */
+.inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  margin-top: 80px;
+  position: relative;
+  width: max-content;
+}
+
+#input_field {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid var(--input-border);
+  border-radius: 100px;
+  padding: 20px 100px 20px 40px;
+  outline: none;
+
+  color: white;
+
+  font-family: inherit;
+  font-size: 1.5rem;
+
+  width: auto;
+  transition: 0.4s;
+
+  text-align: left;
+}
+
+#input_field:focus {
+  border-color: var(--);
+  box-shadow: 0 0 40px var(--input-shadow);
+}
+
+#submit_button {
+  position: absolute;
+  right: 6px;
+  z-index: 10;
+  /* ensures button is on top of the input */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--button-bg);
+  color: var(--button-text);
+
+  border: none;
+  border-radius: 100px;
+
+  width: 80px;
+  height: 60px;
+
+  cursor: pointer;
+  font-weight: 900;
+
+  transition: 0.4s;
+  box-shadow: 0 0 20px var(--button-shadow);
+}
+
+#submit_button:hover {
+  transform: scale(1.18);
+  background: var(--button-bg-hover, #fff);
+  color: var(--button-hover-text);
+}
+
+
+
+/* CARDS */
+#card-container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 100px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.02);
+  width: 90vw;
+  max-width: 1000px;
+
+  padding-left: 30px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  transition: 0.5s;
+  backdrop-filter: blur(5px);
+  animation: bigBang 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.card:hover {
+  background: rgba(109, 40, 217, 0.05);
+  border-color: var(--bright-purple);
+  transform: translateY(-8px) scale(1.02);
+}
+
+.card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: 0.5s;
+}
+
+.card:hover img {
+  border-color: var(--card-border-hover);
+  box-shadow: 0 0 20px var(--card-shadow-hover);
+}
+
+.name {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 200;
+  letter-spacing: 5px;
+  text-transform: lowercase;
+}
+
+/* Animation: The "Big Bang" */
+@keyframes bigBang {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+    filter: blur(20px);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .inputs {
+    position: fixed;
+    bottom: 20px;
+    left: 5%;
+    width: 90%;
+    margin: 0;
+    z-index: 10;
+  }
+
+  #input_field {
+    width: 100%;
+    padding: 12px 60px 12px 20px;
+    font-size: 1rem;
+    border: 1px solid var(--input-border);
+  }
+
+  #submit_button {
+    display: none;
+  }
+
+  #card-container {
+    margin-top: 60px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+
+    margin-top: 10px;
+
+    padding: 8px 15px;
+
+    z-index: -1;
+  }
+
+  .card img {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+  }
+
+  .name {
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-align: left;
+    flex-grow: 1;
+    margin-left: 10px;
+  }
+}
