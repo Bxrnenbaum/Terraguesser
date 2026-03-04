@@ -1134,6 +1134,15 @@
     "capitalLon": 21.4254
   },
   {
+    "country": "North Korea",
+    "capital": "Pyongyang",
+    "countryCode": "kp",
+    "countryLat": 40.3399,
+    "countryLon": 127.5101,
+    "capitalLat": 39.0194,
+    "capitalLon": 125.7381
+  },
+  {
     "country": "Norway",
     "capital": "Oslo",
     "countryCode": "no",
